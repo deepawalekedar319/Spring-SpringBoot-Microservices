@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/integration
+           https://www.springframework.org/schema/integration/spring-integration.xsd">
+   	
+  
+  <!--  Target Bean Class -->
+  <bean id="target" class="com.kedar.beans.OtherClassPropertiesGenerator">
+  		<property name="sno" value="1"/>
+  		<property name="sname" value="kedar"/>
+  		<property name="saddress" value="hyderbad"/>
+  		<property name="avg" value="95.5"/>
+  		<property name="course" value="Java"/>
+  </bean>
+  </beans>         
