@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/integration
+           https://www.springframework.org/schema/integration/spring-integration.xsd">
+
+	<!-- Dependent class -->
+	<bean id="testclass" class="com.kedar.beans.SampleInjectionClass">
+			<property name="rollNumber" value="1"/>
+			<property name="name" value="kedar"/>
+			<property name="course" value="Java"/>
+	</bean>
+
+	<!-- Target Class  Configuration -->
+	<bean id="targetClass" class="com.kedar.beans.SampleTestingInjectionClass">
+			<property name="sample" ref="testclass"/>	
+	</bean>
+</beans>           
