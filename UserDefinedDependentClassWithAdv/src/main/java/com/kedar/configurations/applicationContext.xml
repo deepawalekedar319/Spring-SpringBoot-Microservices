@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/integration
+           https://www.springframework.org/schema/integration/spring-integration.xsd">
+
+		<!-- Dependent class  -->
+		<bean id="dependentClass" class="com.kedar.beans.SetterInjectionDependentClass">
+				<property name="a" value="10"/>
+				<property name="b" value="20"/>
+		</bean>
+		     
+		<!-- Target class -->
+		<bean id="target" class="com.kedar.beans.SetterInjectionTest">
+				<property name="dependent" ref="dependentClass"/>
+		</bean>      
+</beans>           
