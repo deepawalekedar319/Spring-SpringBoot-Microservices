@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/integration
+           https://www.springframework.org/schema/integration/spring-integration.xsd">
+           
+		<!-- Dependent Class 
+			When we are using setter injection then it's not compulsory to use
+			all the properties, we can use what properties we want
+		-->           
+		<bean id="dependent" class="com.kedar.beans.DependentInjectionClass">
+				<!-- <property name="sno" value="70"/>
+				<property name="name" value="D. Kedar Singh"/>
+				<property name="course" value="70"/>
+				<property name="address" value="Hyd"/> -->
+				<!-- <property name="average" value="70.7"/> --><!-- 
+				<constructor-arg name="sno" value="70"/>
+				<constructor-arg name="sname" value="D. Kedar Singh"/>
+				<constructor-arg name="course" value="70"/>
+				<constructor-arg name="address" value="Hyd"/> -->
+		</bean>
+		<!--  Target Class -->
+         <bean id="target" class="com.kedar.beans.TargetInjectionClass">
+         		<property name="dependent" ref="dependent"/> 
+         </bean>  
+</beans>
